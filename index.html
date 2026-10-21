@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check de Fornecedores de Casamento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Check de Fornecedores de Casamento</h1>
+
+    <form id="form-fornecedor">
+      <label for="nome">Nome do fornecedor</label>
+      <input type="text" id="nome" placeholder="Ex.: Buffet Sabor & Festa">
+
+      <label for="categoria">Categoria</label>
+      <select id="categoria">
+        <option value="Buffet">Buffet</option>
+        <option value="Fotografia">Fotografia</option>
+        <option value="Música/DJ">Música/DJ</option>
+        <option value="Decoração">Decoração</option>
+        <option value="Local">Local</option>
+        <option value="Outros">Outros</option>
+      </select>
+
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <h2>Meus fornecedores</h2>
+    <p id="mensagem-vazia">Nenhum fornecedor cadastrado ainda.</p>
+    <ul id="lista"></ul>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
