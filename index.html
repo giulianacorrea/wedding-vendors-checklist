@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Configurações básicas da página -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Check de Fornecedores de Casamento</title>
+ 
+  <!-- Arquivo de estilos (CSS) -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="container">
-    <h1>Check de Fornecedores de Casamento</h1>
-
-    <form id="form-fornecedor">
-      <label for="nome">Nome do fornecedor</label>
-      <input type="text" id="nome" placeholder="Ex.: Buffet Sabor & Festa">
-
-      <label for="categoria">Categoria</label>
-      <select id="categoria">
-        <option value="Buffet">Buffet</option>
-        <option value="Fotografia">Fotografia</option>
-        <option value="Música/DJ">Música/DJ</option>
-        <option value="Decoração">Decoração</option>
-        <option value="Local">Local</option>
-        <option value="Outros">Outros</option>
-      </select>
-
-      <button type="submit">Adicionar</button>
-    </form>
-
-    <h2>Meus fornecedores</h2>
-    <p id="mensagem-vazia">Nenhum fornecedor cadastrado ainda.</p>
-    <ul id="lista"></ul>
+    <!-- Cartão central da aplicação -->
+    <section class="card">
+ 
+      <!-- Cabeçalho: imagem, título e descrição -->
+      <img id="banner" src="img/casamento.jpg" alt="Mesa de casamento decorada com flores">
+      <h1>Check de Fornecedores de Casamento</h1>
+      <p class="descricao">Acompanhe quais fornecedores do casamento ainda faltam contratar.</p>
+ 
+      <!-- Formulário de cadastro de fornecedor -->
+      <form id="form-fornecedor">
+        <input type="text" id="nome" placeholder="Nome do fornecedor">
+ 
+        <select id="categoria">
+          <option value="Buffet">Buffet</option>
+          <option value="Fotografia">Fotografia</option>
+          <option value="Música/DJ">Música/DJ</option>
+          <option value="Decoração">Decoração</option>
+          <option value="Local">Local</option>
+          <option value="Outros">Outros</option>
+        </select>
+ 
+        <button type="submit">Adicionar</button>
+      </form>
+ 
+      <!-- Botão que remove o último fornecedor cadastrado -->
+      <button type="button" id="btn-desfazer">Desfazer último cadastro</button>
+ 
+      <!-- Duas colunas: fornecedores pendentes e concluídos -->
+      <div class="colunas">
+ 
+        <!-- Coluna de pendentes (lista preenchida pelo JavaScript) -->
+        <section class="coluna">
+          <h2>Pendentes <span id="contador-pendentes" class="contador">0</span></h2>
+          <p id="mensagem-vazia">Nenhum fornecedor pendente.</p>
+          <ul id="lista-pendentes"></ul>
+        </section>
+ 
+        <!-- Coluna de concluídos (lista preenchida pelo JavaScript) -->
+        <section class="coluna">
+          <h2>Concluídas <span id="contador-concluidas" class="contador">0</span></h2>
+          <ul id="lista-concluidas"></ul>
+        </section>
+ 
+      </div>
+    </section>
   </main>
-
+ 
+  <!-- Arquivo de comportamento (JavaScript) -->
   <script src="script.js" defer></script>
 </body>
 </html>
+ 
