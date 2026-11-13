@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist do Sim</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💍%3C/text%3E%3C/svg%3E">
+
+</head>
+
+<body>
+    <main class="container">
+        <section class="card">
+
+            <h1>Checklist do Sim </h1>
+            <p class="descricao"> Organize os preparativos do seu casamento.
+                Cadastre tarefas, registre informações
+                importantes e acompanhe cada etapa até o grande dia. </p>
+
+            <section class="minhas-tarefas">
+                <h2>Minhas Tarefas</h2>
+                <form id="form-tarefa">
+                    <label for="nova-tarefa">Nova tarefa:</label>
+                    <input type="text" id="nova-tarefa" placeholder="Ex.: Contratar fotógrafo" required>
+                    <button type="submit">Adicionar</button>
+                </form>
+                <button type="button" id="btn-desfazer" aria-label="Desfazer última tarefa cadastrada" title="Desfazer última tarefa" >
+            </section>
+
+            <div class="colunas">
+                <!-- Pendentes -->
+                <section class="coluna">
+                    <h2>Pendentes <span id="contador-pendentes">0</span> </h2>
+                    <ul id="lista-pendentes"></ul>
+                </section>
+                <!-- Concluídas -->
+                <section class="coluna">
+                    <h2>Concluídas <span id="contador-concluidas">0</span> </h2>
+                    <ul id="lista-concluidas"></ul>
+                </section>
+            </div>
+
+            <section class="data-casamento">
+                <h2>Quando será o grande dia?</h2>
+                <label for="data-casamento">Escolha a data:</label>
+                <input type="date" id="data-casamento">
+            </section>
+
+            <section class="cronograma">
+                <h2>Cronograma de Preparativos</h2>
+                <p>Confira as sugestões do que fazer em cada etapa da organização do seu casamento.</p>
+                <ul id="lista-cronograma"></ul>
+            </section>
+        </section>
+    </main>
+
+    <div id="popup" class="popup" role="dialog" aria-modal="true" aria-labelledby="titulo-popup" hidden>
+        <div class="popup-conteudo">
+            <h2 id="titulo-popup">Informações da tarefa</h2>
+            <label for="valor">Valor (R$):</label>
+            <input type="number" id="valor" min="0" step="0.01" placeholder="Ex: 1500">
+            <label for="pessoa"> Pessoa ou empresa: </label>
+            <input type="text" id="pessoa" placeholder="Digite o nome">
+            <label for="observacoes"> Observações: </label>
+            <textarea id="observacoes" placeholder="Digite informações importantes"></textarea>
+
+            <div class="botoes-popup">
+                <button type="button" id="btn-salvar">Salvar </button>
+                <button type="button" id="btn-fechar"> Fechar </button>
+            </div>
+
+        </div>
+    </div>
+
+    <p id="mensagem-status" class="sr-only" role="status" aria-live="polite"></p>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

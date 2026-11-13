@@ -1,0 +1,497 @@
+/* Configurações da página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f1ed;
+    color: #5c4540;
+
+}
+
+/* Somente a imagem de fundo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/fundo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+/* Centraliza o conteúdo */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+/* Cartão principal */
+.card {
+    background-color: white;
+    width: 100%;
+    max-width: 850px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px #ddd;
+    box-sizing: border-box;
+}
+
+/* Imagem */
+#banner {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Títulos */
+h1 {
+    color: #815050;
+}
+
+h2 {
+    color: #966969;
+}
+
+/* Descrição */
+.descricao {
+    display: block;
+    background-color: #faf4f1;
+    color: #7c6b66;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0 30px 0;
+    text-align: center;
+    line-height: 1.6;
+    border: none;
+}
+
+/* Data do casamento */
+.data-casamento {
+    background-color: #faf4f1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    margin-top: 35px;
+}
+
+#data-casamento {
+    display: block;
+    margin: 15px auto 0;
+    padding: 12px;
+    border: 1px solid #d4b5aa;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Cronograma */
+.cronograma {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.cronograma h2, .cronograma > p {
+    text-align: center;
+}
+
+/* Lista numerada do cronograma */
+#lista-cronograma {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+/* Etapas do cronograma */
+.etapa {
+    background-color: #faf4f1;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border-left: 4px solid #b78686;
+}
+
+.etapa h3 {
+    color: #966969;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* Data de cada etapa */
+.data-etapa {
+    color: #5c4540;
+    font-size: 1rem;
+}
+
+/* Atividades dentro de cada etapa */
+.etapa ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.etapa ul li {
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+
+/* Seção de cadastro de tarefas */
+.minhas-tarefas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 36px;
+    column-gap: 10px;
+    align-items: end;
+    padding-top: 20px;
+}
+
+/* Título ocupa toda a largura */
+.minhas-tarefas h2 {
+    grid-column: 1 / -1;
+}
+
+
+/* Formulário: campo e botão Adicionar */
+#form-tarefa {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    margin: 0;
+    text-align: left;
+}
+
+/* Label acima do campo */
+#form-tarefa label {
+    grid-column: 1 / -1;
+    font-weight: bold;
+}
+
+/* Campo de texto */
+#nova-tarefa {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Campos */
+input[type="text"], input[type="number"], textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+}
+
+#nova-tarefa {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botões */
+
+#form-tarefa button[type="submit"],
+#btn-desfazer {
+    height: 42px;
+    min-height: 42px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #815050;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #966969;
+}
+
+#btn-desfazer {
+    width: 36px;
+    min-width: 36px;
+    min-height: 42px;
+    background-color: #815050;
+
+    /* Ícone de seta branca */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 14 4 9l5-5'/%3E%3Cpath d='M4 9h10a6 6 0 0 1 0 12h-2'/%3E%3C/svg%3E");
+    background-size: 18px 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#btn-desfazer:hover {
+    background-color: #694343;
+}
+
+/* Foco acessível pelo teclado */
+#btn-desfazer:focus-visible {
+    outline: 3px solid #6b3e85;
+    outline-offset: 3px;
+}
+
+/* Colunas */
+.colunas {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+      margin-bottom: 40px;
+}
+
+.coluna {
+    flex: 1;
+    min-width: 0;
+    background-color: #faf4f1;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.coluna h2 {
+    font-size: 19px;
+}
+
+/* Listas de tarefas */
+.coluna ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Cada tarefa */
+.coluna li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+/* Nome da tarefa clicável para concluir */
+.nome-tarefa {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    padding: 4px;
+    color: #5c4540;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+/* Efeito ao passar o mouse */
+.nome-tarefa:hover {
+    background: transparent;
+    color: #815050;
+    text-decoration: underline;
+}
+
+/* Destaque ao navegar com o teclado */
+.nome-tarefa:focus-visible {
+    outline: 3px solid #6b3e85;
+    outline-offset: 3px;
+}
+
+/* Tarefa concluída */
+.nome-tarefa.concluida {
+    color: #666666;
+    text-decoration: line-through;
+}
+
+/* Botão para editar informações */
+.btn-editar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    box-sizing: border-box;
+    padding: 0;
+
+    background-color: #815050;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Efeito ao passar o mouse */
+.btn-editar:hover {
+    background-color: #694343;
+}
+
+/* Destaque ao navegar pelo teclado */
+.btn-editar:focus-visible {
+    outline: 3px solid #6b3e85;
+    outline-offset: 3px;
+}
+
+
+/* Botão para excluir tarefa */
+.btn-excluir {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    box-sizing: border-box;
+    padding: 0;
+
+    background-color: #a54a4a;
+
+    /* Ícone de lixeira branca */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 6h18'/%3E%3Cpath d='M8 6V4h8v2'/%3E%3Cpath d='M19 6l-1 14H6L5 6'/%3E%3Cpath d='M10 10v7'/%3E%3Cpath d='M14 10v7'/%3E%3C/svg%3E");
+
+    background-size: 17px 17px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Efeito ao passar o mouse */
+.btn-excluir:hover {
+    background-color: #873737;
+}
+
+/* Destaque ao navegar pelo teclado */
+.btn-excluir:focus-visible {
+    outline: 3px solid #6b3e85;
+    outline-offset: 3px;
+}
+
+
+/* Contadores */
+#contador-pendentes, #contador-concluidas {
+    background-color: #e4ceca;
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+
+/* Fundo do pop-up */
+.popup {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteúdo do pop-up */
+.popup-conteudo {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 85%;
+    max-width: 400px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.popup-conteudo h2 {
+    text-align: center;
+}
+
+/* Campos do pop-up */
+.popup-conteudo label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.popup-conteudo input,
+.popup-conteudo textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.popup-conteudo textarea {
+    height: 90px;
+}
+.popup[hidden] {
+    display: none;
+}
+
+/* Botões do pop-up */
+.botoes-popup {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#btn-fechar {
+    background-color: #999;
+}
+
+/* Telas pequenas */
+@media (max-width: 600px) {
+    .colunas {
+    flex-direction: column;
+    }
+#form-tarefa {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+}
+.minhas-tarefas {
+    grid-template-columns: minmax(0, 1fr) 36px;
+    column-gap: 8px;
+}
+#form-tarefa button {
+    padding: 10px;
+}
+.card {
+    padding: 15px;
+}
+}
+
+/* Destaque forte e visível ao navegar com o teclado */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #6b3e85;
+    outline-offset: 3px;
+}
+
+/* Oculta visualmente as mensagens de acessibilidade */
+#mensagem-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
