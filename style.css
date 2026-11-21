@@ -101,6 +101,39 @@ h2 {
     text-align: center;
 }
 
+/* Organiza o título e a setinha */
+.titulo-cronograma {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Estiliza o botão */
+#btn-recolher {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color:  #570907;
+    font-size: 35px;
+}
+
+/* Estiliza a setinha */
+.setinha-cronograma {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Gira a setinha quando recolher */
+#btn-recolher[aria-expanded="false"] .setinha-cronograma {
+    transform: rotate(-90deg);
+}
+
+/* Esconde o conteúdo quando recolhido */
+.conteudo-cronograma[hidden] {
+    display: none;
+}
+
 /* Lista numerada do cronograma */
 #lista-cronograma {
     padding-left: 0;
@@ -236,7 +269,7 @@ button:hover {
 
 /* Foco acessível pelo teclado */
 #btn-desfazer:focus-visible {
-    outline: 3px solid #6b3e85;
+    outline: 3px solid #570907;
     outline-offset: 3px;
 }
 
@@ -301,7 +334,7 @@ button:hover {
 
 /* Destaque ao navegar com o teclado */
 .nome-tarefa:focus-visible {
-    outline: 3px solid #6b3e85;
+    outline: 3px solid #570907;
     outline-offset: 3px;
 }
 
@@ -342,7 +375,7 @@ button:hover {
 
 /* Destaque ao navegar pelo teclado */
 .btn-editar:focus-visible {
-    outline: 3px solid #6b3e85;
+    outline: 3px solid #570907;
     outline-offset: 3px;
 }
 
@@ -382,7 +415,7 @@ button:hover {
 
 /* Destaque ao navegar pelo teclado */
 .btn-excluir:focus-visible {
-    outline: 3px solid #6b3e85;
+    outline: 3px solid #570907;
     outline-offset: 3px;
 }
 
@@ -479,7 +512,7 @@ button:hover {
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-    outline: 3px solid #6b3e85;
+    outline: 3px solid #570907;
     outline-offset: 3px;
 }
 
@@ -494,4 +527,26 @@ textarea:focus-visible {
     clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
+}
+.titulo-cronograma {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#btn-recolher {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background-color: #86494c;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#btn-recolher:hover {
+  opacity: 0.85;
+}
+.conteudo-cronograma.recolhido {
+  display: none;
 }
