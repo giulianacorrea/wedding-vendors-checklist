@@ -101,22 +101,6 @@ h2 {
     text-align: center;
 }
 
-/* Organiza o título e a setinha */
-.titulo-cronograma {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-/* Estiliza o botão */
-#btn-recolher {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color:  #570907;
-    font-size: 35px;
-}
 
 /* Estiliza a setinha */
 .setinha-cronograma {
