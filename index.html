@@ -19,7 +19,7 @@
             <p class="descricao"> Organize os preparativos do seu casamento.
                 Cadastre tarefas, registre informações
                 importantes e acompanhe cada etapa até o grande dia. </p>
-
+             <!-- Seção para cadastrar novas tarefas -->
             <section class="minhas-tarefas">
                 <h2>Minhas Tarefas</h2>
                 <form id="form-tarefa">
@@ -27,9 +27,15 @@
                     <input type="text" id="nova-tarefa" placeholder="Ex.: Contratar fotógrafo" required>
                     <button type="submit">Adicionar</button>
                 </form>
-                <button type="button" id="btn-desfazer" aria-label="Desfazer última tarefa cadastrada" title="Desfazer última tarefa" >
+                <!-- Botão de desfazer: fica sem texto porque o ícone da seta
+     é colocado pelo CSS (veja #btn-desfazer no style.css).
+     aria-label = texto que o leitor de tela fala
+     title = texto que aparece ao parar o mouse em cima -->
+                <button type="button" id="btn-desfazer" aria-label="Desfazer última tarefa cadastrada" title="Desfazer última tarefa" > </button>
             </section>
-
+         <!-- Container das duas colunas de tarefas -->
+        <!-- O span guarda o contador, atualizado pelo JS -->
+        <!-- Lista vazia: o JS cria os itens (li) aqui -->
             <div class="colunas">
                 <!-- Pendentes -->
                 <section class="coluna">
@@ -42,21 +48,32 @@
                     <ul id="lista-concluidas"></ul>
                 </section>
             </div>
-
+        <!-- Seção para escolher a data do casamento -->
             <section class="data-casamento">
                 <h2>Quando será o grande dia?</h2>
                 <label for="data-casamento">Escolha a data:</label>
                 <input type="date" id="data-casamento">
             </section>
-
+         <!-- Sugestões de o que fazer em cada etapa -->
             <section class="cronograma">
-                <h2>Cronograma de Preparativos</h2>
-                <p>Confira as sugestões do que fazer em cada etapa da organização do seu casamento.</p>
-                <ul id="lista-cronograma"></ul>
+               <div class="titulo-cronograma">
+              <h2>Cronograma de Preparativos</h2>
+             <button type="button" id="btn-recolher" aria-label="Recolher o cronograma de preparativos" title="Recolher cronograma">▼</button>
+                </div>
+
+            <div id="conteudo-cronograma" class="conteudo-cronograma">
+              <p>Confira as sugestões do que fazer em cada etapa da organização do seu casamento.</p>
+              <ul id="lista-cronograma"></ul>
+            </div>
             </section>
         </section>
     </main>
-
+    <!-- Popup para cadastrar informações da tarefa
+     role="dialog" = avisa ao leitor de tela que isso é uma janelinha
+     aria-modal="true" = enquanto está aberta, o resto da página fica bloqueado
+     aria-labelledby = usa o título (h2) como nome da janela
+     hidden = começa escondido; o JavaScript mostra quando clicar no lápis -->
+<div id="popup" class="popup" role="dialog" aria-modal="true" aria-labelledby="titulo-popup" hidden>
     <div id="popup" class="popup" role="dialog" aria-modal="true" aria-labelledby="titulo-popup" hidden>
         <div class="popup-conteudo">
             <h2 id="titulo-popup">Informações da tarefa</h2>
@@ -75,6 +92,7 @@
         </div>
     </div>
 
+    <!-- Mensagem só para leitores de tela (sr-only esconde visualmente) -->
     <p id="mensagem-status" class="sr-only" role="status" aria-live="polite"></p>
 
     <script src="script.js"></script>
