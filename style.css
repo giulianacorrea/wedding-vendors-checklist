@@ -528,25 +528,32 @@ textarea:focus-visible {
     white-space: nowrap;
     border: 0;
 }
+/* =========================================
+   TÍTULO DO CRONOGRAMA + BOTÃO DE RECOLHER
+   ========================================= */
+
+/* Coloca o título e o botão na mesma linha */
 .titulo-cronograma {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-#btn-recolher {
-  width: 44px;
-  height: 44px;
-  border: none;
-  border-radius: 8px;
-  background-color: #86494c;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
+    display: flex;            /* deixa o título e o botão lado a lado */
+    align-items: center;      /* alinha os dois pelo meio */
+    justify-content: center;  /* centraliza o conjunto na página */
+    gap: 15px;                /* espaço entre o título e o botão */
 }
 
-#btn-recolher:hover {
-  opacity: 0.85;
+/* Aparência do botão (igual aos botões "Adicionar" e "Desfazer") */
+#btn-recolher {
+    width: 42px;
+    height: 42px;
+    padding: 0;                 /* deixa a setinha bem no centro */
+    background-color: #815050;  /* mesma cor dos outros botões */
+    color: white;               /* cor da setinha */
+    border: none;
+    border-radius: 6px;         /* mesmos cantos arredondados */
+    font-size: 16px;
+    cursor: pointer;
 }
-.conteudo-cronograma.recolhido {
-  display: none;
+
+/* Escurece o botão ao passar o mouse */
+#btn-recolher:hover {
+    background-color: #694343;
 }
